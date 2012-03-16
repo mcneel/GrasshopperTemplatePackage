@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Empty Grasshopper Component</Name>
+    <Description>A new Grasshopper Component implemented in C#</Description>
+    <Icon>icon.ico</Icon>
+    <TemplateID>A12884FE-889E-4F8B-B34C-1CBACA270EA4</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>MyComponent.cs</DefaultName>
+    <SortOrder>-1000</SortOrder>
+    <TemplateGroupID>Grasshopper</TemplateGroupID>
+  </TemplateData>
+  <TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+			</Reference>
+		</References>
+
+    <ProjectItem ReplaceParameters="true">MyComponent.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
