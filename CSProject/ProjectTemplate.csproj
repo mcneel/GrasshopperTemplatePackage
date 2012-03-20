@@ -46,7 +46,6 @@ $endif$ $if$ ($rhino5_64_checked$ == 1)<PropertyGroup Condition="'$(Configuratio
 		<Reference Include="System.Core"/>
     <Reference Include="System.Drawing"/>
     <Reference Include="System.Windows.Forms" />
-		<Reference Include="Microsoft.CSharp"/>
     <Reference Include="RhinoCommon">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$rhinocommonURL$</HintPath>
