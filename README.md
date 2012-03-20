@@ -1,5 +1,5 @@
-New RhinoCommon SDK Wizards Package
-===================================
+Grasshopper SDK Wizards Package
+===============================
 
 Building
 --------
@@ -13,7 +13,7 @@ source.extension.vsixmanifest to trigger update.
 
 Copyright
 ---------
-Copyright (c) 2011 Robert McNeel & Associates. All Rights Reserved.
+Copyright (c) 2012 Robert McNeel & Associates. All Rights Reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -26,4 +26,3 @@ WARRANTIES OF FITNESS FOR ANY PARTICULAR PURPOSE AND OF MERCHANTABILITY ARE HERE
 DISCLAIMED.
 
 Rhinoceros is a registered trademark of Robert McNeel & Associates.
-
