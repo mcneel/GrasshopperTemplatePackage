@@ -3,12 +3,12 @@
 Public Class $infoclassname$
 	Inherits GH_AssemblyInfo
 
-	Public Overrides ReadOnly Property AssemblyName() As String
+	Public Overrides ReadOnly Property Name() As String
 		Get
 			Return "$infovisualname$"
 		End Get
 	End Property
 
 	'Override here any more methods you see fit.
-	'Start typing Public Overrides..., select a property and push Enter.
+	'Start typing Overrides..., select a property and push Enter.
 End Class
