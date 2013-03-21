@@ -4,7 +4,7 @@ namespace $safeprojectname$
 {
   public class $infoclassname$ : GH_AssemblyInfo
   {
-        public override string AssemblyName
+        public override string Name
         {
             get
             {
@@ -13,6 +13,6 @@ namespace $safeprojectname$
         }
 
         //Override here any more methods you see fit.
-        //Start typing public override..., select a property and push Enter.
+        //Start typing override..., select a property and push Enter.
   }
 }
