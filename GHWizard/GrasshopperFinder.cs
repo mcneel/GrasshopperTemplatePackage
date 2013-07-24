@@ -20,16 +20,23 @@ namespace GHWizard
     {
       var strings = new List<string>();
 
-      //Rhino 5 64-bit
+      //Rhino 5 64-bit old and new
       if (Environment.Is64BitOperatingSystem)
       {
         SearchRegistryKey(rh5_64_Reg, rh5_RegName,
           RegistryHive.LocalMachine, RegistryView.Registry64, strings);
+          
+          SearchRegistryKey(rh5_64_Reg, rh5_RegName,
+          RegistryHive.CurrentUser, RegistryView.Registry64, strings);
       }
 
       //Rhino 5 32-bit
       SearchRegistryKey(rh5_32_Reg, rh5_RegName,
           RegistryHive.LocalMachine, RegistryView.Registry32, strings);
+          
+      //Rhino 5 32-bit old installation type
+      SearchRegistryKey(rh5_32_Reg, rh5_RegName,
+          RegistryHive.CurrentUser, RegistryView.Registry32, strings);
 
       //Grasshooper 
       {
