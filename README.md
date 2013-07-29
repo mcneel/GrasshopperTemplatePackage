@@ -1,6 +1,13 @@
 Grasshopper SDK Wizards Package
 ===============================
 
+What Is This?
+-------------
+If you want to create a custom grasshopper component (www.grasshopper3d.com), it is good
+to have a project wizard to get you started. Visual Studio has a grasshopper project
+wizard that can be found by searching for "grasshopper" in the extension manager's online
+gallery. The code here is used for building this Visual Studio project wizard.
+
 Building
 --------
 This projects depends upon the Visual Studio SDK: http://www.microsoft.com/download/en/details.aspx?id=2680
@@ -13,7 +20,7 @@ source.extension.vsixmanifest to trigger update.
 
 Copyright
 ---------
-Copyright (c) 2012 Robert McNeel & Associates. All Rights Reserved.
+Copyright (c) 2013 Robert McNeel & Associates. All Rights Reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
