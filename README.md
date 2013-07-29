@@ -10,8 +10,11 @@ gallery. The code here is used for building this Visual Studio project wizard.
 
 Building
 --------
-This projects depends upon the Visual Studio SDK: http://www.microsoft.com/download/en/details.aspx?id=2680
-Using VS IDE complilation in Release mode with GrasshopperTemplatePackage as default project should produce a file named "RCPackage.vsix" inside /GrasshopperTemplatePackage/bin.
+You need Visual Studio 2010
+You also need the Visual Studio SDK:
+http://www.microsoft.com/en-us/download/details.aspx?id=21835
+Using VS IDE complilation in Release mode with GrasshopperTemplatePackage as default
+project should produce a file named "RCPackage.vsix" inside /GrasshopperTemplatePackage/bin.
 
 Updating
 --------
