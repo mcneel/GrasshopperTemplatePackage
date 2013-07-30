@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.TemplateWizard;
 using EnvDTE;
-using System.IO;
 
 namespace GHWizard
 {
@@ -35,12 +33,12 @@ namespace GHWizard
         Dictionary<string, string> replacementsDictionary,
         WizardRunKind runKind, object[] customParams)
     {
-      bool shouldAdd;
+      bool should_add;
       try
       {
-        UserInputForm inputForm = new UserInputForm(replacementsDictionary);
+        UserInputForm input_form = new UserInputForm(replacementsDictionary);
         replacementsDictionary["$targetframeworkversion$"] = "3.5";
-        shouldAdd = inputForm.ShowDialog() == DialogResult.OK;
+        should_add = input_form.ShowDialog() == DialogResult.OK;
       }
       catch (Exception ex)
       {
@@ -48,7 +46,7 @@ namespace GHWizard
         throw new WizardCancelledException("An error occurred.", ex);
       }
 
-      if (!shouldAdd)
+      if (!should_add)
         throw new WizardBackoutException("User cancelled the wizard.");
     }
 

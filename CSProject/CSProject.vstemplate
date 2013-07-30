@@ -21,7 +21,7 @@
     </Project>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>GHWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9cbe2d392744cfe6</Assembly>
+    <Assembly>GHWizard, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9cbe2d392744cfe6</Assembly>
     <FullClassName>GHWizard.CollectInformationWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

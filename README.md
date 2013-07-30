@@ -15,12 +15,13 @@ You need Visual Studio 2010
 You also need the Visual Studio SDK:
 http://www.microsoft.com/en-us/download/details.aspx?id=21835
 
-Using VS IDE complilation in Release mode with GrasshopperTemplatePackage as default
-project should produce a file named "RCPackage.vsix" inside /GrasshopperTemplatePackage/bin.
+Compiling in Release mode with GrasshopperTemplatePackage as default project
+should produce a file named "GHPackage.vsix" inside /GrasshopperTemplatePackage/bin.
 
 Updating
 --------
-Do not change the ID of the project and modify the version as stated in 
+Do not change the ID of the project
+Modify the version as stated in 
 source.extension.vsixmanifest to trigger update.
 
 Copyright

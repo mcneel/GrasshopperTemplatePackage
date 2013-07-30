@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Win32;
 using System.IO;
 
@@ -9,9 +7,9 @@ namespace GHWizard
 {
   static class RhinoFinder
   {
-    const string rhinoExe = "Rhino.exe";
-    const string rhino4Exe = "Rhino4.exe";
-    const string rhino5Exe = "Rhino5.exe";
+    const string RHINO_EXE = "Rhino.exe";
+    const string RHINO4_EXE = "Rhino4.exe";
+    const string RHINO5_EXE = "Rhino5.exe";
 
     public static bool FindRhino5_64bit(out string path, out string rhinoExeName)
     {
@@ -29,21 +27,21 @@ namespace GHWizard
         foreach (var str in strings)
         {
           path = Path.Combine(str, "System");
-          if (File.Exists(Path.Combine(path, rhinoExe)))
+          if (File.Exists(Path.Combine(path, RHINO_EXE)))
           {
-            rhinoExeName = rhinoExe;
+            rhinoExeName = RHINO_EXE;
             return true;
           }
 
-          if (File.Exists(Path.Combine(path, rhino4Exe)))
+          if (File.Exists(Path.Combine(path, RHINO4_EXE)))
           {
-            rhinoExeName = rhino4Exe;
+            rhinoExeName = RHINO4_EXE;
             return true;
           }
 
-          if (File.Exists(Path.Combine(path, rhino5Exe)))
+          if (File.Exists(Path.Combine(path, RHINO5_EXE)))
           {
-            rhinoExeName = rhino5Exe;
+            rhinoExeName = RHINO5_EXE;
             return true;
           }
         }
@@ -70,21 +68,21 @@ namespace GHWizard
       foreach (var str in strings)
       {
         path = Path.Combine(str, "System");
-        if (File.Exists(Path.Combine(path, rhino4Exe)))
+        if (File.Exists(Path.Combine(path, RHINO4_EXE)))
         {
-          rhinoExeName = rhino4Exe;
+          rhinoExeName = RHINO4_EXE;
           return true;
         }
 
-        if (File.Exists(Path.Combine(path, rhinoExe))) // In case we change out minds later...
+        if (File.Exists(Path.Combine(path, RHINO_EXE))) // In case we change out minds later...
         {
-          rhinoExeName = rhinoExe;
+          rhinoExeName = RHINO_EXE;
           return true;
         }
 
-        if (File.Exists(Path.Combine(path, rhino5Exe)))
+        if (File.Exists(Path.Combine(path, RHINO5_EXE)))
         {
-          rhinoExeName = rhino5Exe;
+          rhinoExeName = RHINO5_EXE;
           return true;
         }
       }
@@ -95,26 +93,24 @@ namespace GHWizard
     /// <summary>
     /// Caution: this method swallows any exception.
     /// </summary>
-    private static bool SearchRegistryKey(string keyName, RegistryHive hive, RegistryView view, IList<string> installPaths)
+    private static void SearchRegistryKey(string keyName, RegistryHive hive, RegistryView view, IList<string> installPaths)
     {
       try
       {
-        using (var registryKey = RegistryKey.OpenBaseKey(hive, view).OpenSubKey(keyName))
+        using (var registry_key = RegistryKey.OpenBaseKey(hive, view).OpenSubKey(keyName))
         {
-          if (registryKey != null)
+          if (registry_key != null)
           {
-            string value = registryKey.GetValue("InstallPath") as string;
+            string value = registry_key.GetValue("InstallPath") as string;
             if (!string.IsNullOrEmpty(value))
             {
               if (!installPaths.Contains(value))
                 installPaths.Add(value);
-              return true;
             }
           }
         }
       }
       catch { }
-      return false;
     }
   }
 }

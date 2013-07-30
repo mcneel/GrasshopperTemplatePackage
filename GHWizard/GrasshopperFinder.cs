@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Win32;
 using System.IO;
 
@@ -9,12 +7,11 @@ namespace GHWizard
 {
   class GrasshopperFinder
   {
-    const string rh5_64_Reg = @"SOFTWARE\McNeel\Rhinoceros\5.0x64\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
-    const string rh5_32_Reg = @"SOFTWARE\McNeel\Rhinoceros\5.0\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
-    const string rh4_MostRecent = @"SOFTWARE\McNeel\Rhinoceros\4.0\{0}\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
-    const string rh5_RegName = @"FolderName";
-
-    const string ghDll = "Grasshopper.dll";
+    const string RH5_64_REG = @"SOFTWARE\McNeel\Rhinoceros\5.0x64\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
+    const string RH5_32_REG = @"SOFTWARE\McNeel\Rhinoceros\5.0\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
+    const string RH4_MOST_RECENT = @"SOFTWARE\McNeel\Rhinoceros\4.0\{0}\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
+    const string RH5_REG_NAME = @"FolderName";
+    const string GH_DLL = "Grasshopper.dll";
 
     public static bool FindGrasshopper(out string path, out string grasshopperDllName)
     {
@@ -23,19 +20,19 @@ namespace GHWizard
       //Rhino 5 64-bit old and new
       if (Environment.Is64BitOperatingSystem)
       {
-        SearchRegistryKey(rh5_64_Reg, rh5_RegName,
+        SearchRegistryKey(RH5_64_REG, RH5_REG_NAME,
           RegistryHive.LocalMachine, RegistryView.Registry64, strings);
           
-          SearchRegistryKey(rh5_64_Reg, rh5_RegName,
+          SearchRegistryKey(RH5_64_REG, RH5_REG_NAME,
           RegistryHive.CurrentUser, RegistryView.Registry64, strings);
       }
 
       //Rhino 5 32-bit
-      SearchRegistryKey(rh5_32_Reg, rh5_RegName,
+      SearchRegistryKey(RH5_32_REG, RH5_REG_NAME,
           RegistryHive.LocalMachine, RegistryView.Registry32, strings);
           
       //Rhino 5 32-bit old installation type
-      SearchRegistryKey(rh5_32_Reg, rh5_RegName,
+      SearchRegistryKey(RH5_32_REG, RH5_REG_NAME,
           RegistryHive.CurrentUser, RegistryView.Registry32, strings);
 
       //Grasshooper 
@@ -43,16 +40,16 @@ namespace GHWizard
         var f = new List<string>();
         if (SearchRegistryKey(@"SOFTWARE\McNeel\Rhinoceros\4.0\", "MostRecent", RegistryHive.LocalMachine, RegistryView.Registry32, f))
         {
-          SearchRegistryKey(string.Format(rh4_MostRecent, f[0]), rh5_RegName, RegistryHive.LocalMachine, RegistryView.Registry32, strings);
+          SearchRegistryKey(string.Format(RH4_MOST_RECENT, f[0]), RH5_REG_NAME, RegistryHive.LocalMachine, RegistryView.Registry32, strings);
         }
       }
 
       foreach (var str in strings)
       {
-        if (File.Exists(Path.Combine(str, ghDll)))
+        if (File.Exists(Path.Combine(str, GH_DLL)))
         {
           path = str;
-          grasshopperDllName = ghDll;
+          grasshopperDllName = GH_DLL;
           return true;
         }
       }
@@ -70,11 +67,11 @@ namespace GHWizard
     {
       try
       {
-        using (var registryKey = RegistryKey.OpenBaseKey(hive, view).OpenSubKey(keyName))
+        using (var registry_key = RegistryKey.OpenBaseKey(hive, view).OpenSubKey(keyName))
         {
-          if (registryKey != null)
+          if (registry_key != null)
           {
-            string value = registryKey.GetValue(valueName) as string;
+            string value = registry_key.GetValue(valueName) as string;
             if (!string.IsNullOrEmpty(value))
             {
               if (!found.Contains(value))
