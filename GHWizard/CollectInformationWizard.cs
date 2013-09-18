@@ -38,6 +38,7 @@ namespace GHWizard
       {
         UserInputForm input_form = new UserInputForm(replacementsDictionary);
         replacementsDictionary["$targetframeworkversion$"] = "3.5";
+        replacementsDictionary.Add("$guidGHA$", "$" + Guid.NewGuid().ToString() + "$");
         should_add = input_form.ShowDialog() == DialogResult.OK;
       }
       catch (Exception ex)

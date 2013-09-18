@@ -1,0 +1,5 @@
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSComponent\bin\ItemTemplates\CSharp\1033\CSCommand.zip
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSComponent\obj\Debug\CSComponent.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSComponent\obj\Debug\CSharp\1033\CSCommand.zip
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSComponent\obj\Debug\CSCommandItem.dll
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSComponent\obj\Debug\CSCommandItem.pdb

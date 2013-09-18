@@ -1,0 +1,4 @@
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\VBComponent\bin\Debug\ItemTemplates\VisualBasic\1033\VBComponent.zip
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\VBComponent\obj\Debug\VisualBasic\1033\VBComponent.zip
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\VBComponent\obj\Debug\VBCommandItem.dll
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\VBComponent\obj\Debug\VBCommandItem.pdb

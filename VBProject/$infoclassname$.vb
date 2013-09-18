@@ -22,20 +22,20 @@ Public Class $infoclassname$
 	End Property
 	Public Overrides ReadOnly Property Id As System.Guid
 		Get
-			Return New System.Guid("$guid9$")
+      Return New System.Guid("$guidGHA$")
 		End Get
 	End Property
 
 	Public Overrides ReadOnly Property AuthorName As String
 		Get
 			'Return a string identifying you or your company.
-			Return MyBase.AuthorName
+      Return "$registeredorganization$"
 		End Get
 	End Property
 	Public Overrides ReadOnly Property AuthorContact As String
 		Get
 			'Return a string representing your preferred contact details.
-			Return MyBase.AuthorContact
+      Return ""
 		End Get
 	End Property
 End Class

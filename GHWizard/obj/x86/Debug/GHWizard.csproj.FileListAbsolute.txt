@@ -1,0 +1,8 @@
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\GHWizard\bin\GHWizard.dll
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\GHWizard\bin\GHWizard.pdb
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\GHWizard\obj\x86\Debug\GHWizard.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\GHWizard\obj\x86\Debug\GHWizard.Properties.Resources.resources
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\GHWizard\obj\x86\Debug\GHWizard.UserInputForm.resources
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\GHWizard\obj\x86\Debug\GHWizard.csproj.GenerateResource.Cache
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\GHWizard\obj\x86\Debug\GHWizard.dll
+C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\GHWizard\obj\x86\Debug\GHWizard.pdb
