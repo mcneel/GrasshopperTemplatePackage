@@ -36,6 +36,7 @@
       this.label2 = new System.Windows.Forms.Label();
       this.componentClassName = new System.Windows.Forms.TextBox();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.label7 = new System.Windows.Forms.Label();
       this.label6 = new System.Windows.Forms.Label();
       this.componentnickname = new System.Windows.Forms.TextBox();
       this.componentDescription = new System.Windows.Forms.TextBox();
@@ -61,7 +62,6 @@
       this.rhino32path = new System.Windows.Forms.Label();
       this.rhino64 = new System.Windows.Forms.CheckBox();
       this.rhino32 = new System.Windows.Forms.CheckBox();
-      this.label7 = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.SuspendLayout();
@@ -144,6 +144,16 @@
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "First component";
       // 
+      // label7
+      // 
+      this.label7.AutoSize = true;
+      this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
+      this.label7.Location = new System.Drawing.Point(7, 145);
+      this.label7.Name = "label7";
+      this.label7.Size = new System.Drawing.Size(60, 13);
+      this.label7.TabIndex = 24;
+      this.label7.Text = "Description";
+      // 
       // label6
       // 
       this.label6.AutoSize = true;
@@ -160,6 +170,7 @@
       this.componentnickname.Name = "componentnickname";
       this.componentnickname.Size = new System.Drawing.Size(162, 20);
       this.componentnickname.TabIndex = 3;
+      this.componentnickname.Text = "Nickname";
       // 
       // componentDescription
       // 
@@ -397,16 +408,6 @@
       this.rhino32.Text = "5 32-bit";
       this.rhino32.UseVisualStyleBackColor = true;
       this.rhino32.CheckedChanged += new System.EventHandler(this.rhino32_CheckedChanged);
-      // 
-      // label7
-      // 
-      this.label7.AutoSize = true;
-      this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
-      this.label7.Location = new System.Drawing.Point(7, 145);
-      this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(60, 13);
-      this.label7.TabIndex = 24;
-      this.label7.Text = "Description";
       // 
       // UserInputForm
       // 
