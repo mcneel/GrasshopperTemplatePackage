@@ -1,4 +1,0 @@
-C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSProject\bin\ProjectTemplates\CSharp\1033\CSProject.zip
-C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSProject\obj\Debug\CSharp\1033\CSProject.zip
-C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSProject\obj\Debug\RhinoCommonProjectTemplate.dll
-C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\CSProject\obj\Debug\RhinoCommonProjectTemplate.pdb

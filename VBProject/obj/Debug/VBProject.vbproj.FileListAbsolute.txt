@@ -1,4 +1,0 @@
-C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\VBProject\bin\Debug\ProjectTemplates\VisualBasic\1033\VBProject.zip
-C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\VBProject\obj\Debug\VisualBasic\1033\VBProject.zip
-C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\VBProject\obj\Debug\VBProjectTemplate.dll
-C:\Users\David\Documents\GitHub\GrasshopperTemplatePackage\VBProject\obj\Debug\VBProjectTemplate.pdb

@@ -6,3 +6,5 @@
 /RCWizard/bin
 /RCWizard/obj
 *.suo
+/VBProject/*
+/VBProject/*
