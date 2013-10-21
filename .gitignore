@@ -1,10 +1,4 @@
 
-/GrasshopperProjectTemplate/bin
-/GrasshopperProjectTemplate/obj
-/GrasshopperTemplatePackage/bin
-/GrasshopperTemplatePackage/obj
-/RCWizard/bin
-/RCWizard/obj
+*/bin
+*/obj
 *.suo
-/VBProject/*
-/VBProject/*
