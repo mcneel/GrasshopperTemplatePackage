@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.IO;
@@ -13,37 +10,37 @@ namespace GHWizard
 {
   public partial class UserInputForm : Form
   {
-    Dictionary<string, string> _replacements;
+    readonly Dictionary<string, string> m_replacements;
 
     public UserInputForm(Dictionary<string, string> replacements)
     {
-      _replacements = replacements;
+      m_replacements = replacements;
       InitializeComponent();
 
-      if (_replacements != null)
+      if (m_replacements != null)
       {
         //Title
-        this.Text = string.Format(this.Text, _replacements["$safeprojectname$"]);
+        this.Text = string.Format(this.Text, m_replacements["$safeprojectname$"]);
 
-        addondisplayname.Text = _replacements["$safeprojectname$"];
-        componentClassName.Text = _replacements["$safeprojectname$"] + "Component";
+        addondisplayname.Text = m_replacements["$safeprojectname$"];
+        componentClassName.Text = m_replacements["$safeprojectname$"] + "Component";
 
-        componentVisualName.Text = _replacements["$safeprojectname$"];
+        componentVisualName.Text = m_replacements["$safeprojectname$"];
 
-        string path, exeName;
+        string path, exe_name;
         
-        bool ok32 = RhinoFinder.FindRhino5_32bit(out path, out exeName);
-        rhino32path.Text = Path.Combine(path, exeName);
+        bool ok32 = RhinoFinder.FindRhino5_32bit(out path, out exe_name);
+        rhino32path.Text = Path.Combine(path, exe_name);
         rhino32.Checked = ok32;
 
         string path32 = path;
-        bool ok64 = RhinoFinder.FindRhino5_64bit(out path, out exeName);
-        rhino64path.Text = Path.Combine(path, exeName);
+        bool ok64 = RhinoFinder.FindRhino5_64bit(out path, out exe_name);
+        rhino64path.Text = Path.Combine(path, exe_name);
         rhino64.Checked = ok64;
 
-        bool ghOk = GrasshopperFinder.FindGrasshopper(out path, out exeName);
-        if (ghOk)
-          grasshopperPath.Text = Path.Combine(path, exeName);
+        bool gh_ok = GrasshopperFinder.FindGrasshopper(out path, out exe_name);
+        if (gh_ok)
+          grasshopperPath.Text = Path.Combine(path, exe_name);
         else
         {
           rhinocommonPath.Text = "Please select a path to Grasshopper.dll to continue.";
@@ -86,10 +83,6 @@ namespace GHWizard
         throw new NotSupportedException("This constructor is only for design.");
     }
 
-    private void finishButton_Click(object sender, EventArgs e)
-    {
-    }
-
     protected override void OnClosing(CancelEventArgs e)
     {
       FinalVariableSetup();
@@ -98,13 +91,13 @@ namespace GHWizard
 
     private void EnableOrDisableContinue()
     {
-      bool either32or64isChecked = rhino32.Checked || rhino64.Checked;
+      bool either_checked = rhino32.Checked || rhino64.Checked;
 
-      eitheronetext.Visible = !either32or64isChecked;
+      eitheronetext.Visible = !either_checked;
 
       finish.Enabled =
         IsTextBoxAllRight(addondisplayname) && IsTextBoxAllRight(componentClassName) &&
-        either32or64isChecked &&
+        either_checked &&
         (rhino32.Checked ? File.Exists(rhino32path.Text) : true) &&
         (rhino64.Checked ? File.Exists(rhino64path.Text) : true) &&
         File.Exists(rhinocommonPath.Text) &&
@@ -118,22 +111,22 @@ namespace GHWizard
 
     private void eithertextbox_TextChanged(object sender, EventArgs e)
     {
-      TextBox realSender = sender as TextBox;
+      TextBox real_sender = sender as TextBox;
 
-      if (realSender != null)
+      if (real_sender != null)
       {
-        string text = realSender.Text;
+        string text = real_sender.Text;
 
         const string pattern = "^[^A-Za-z]+|[^A-Za-z0-9]+"; //finds bad chars at beginning or around
         if (Regex.IsMatch(text, pattern))
         {
           text = Regex.Replace(text, pattern, string.Empty);
-          realSender.Text = text;
+          real_sender.Text = text;
         }
       }
 
-      if (componentClassName.Text == _replacements["$safeprojectname$"])
-        componentClassName.Text = _replacements["$safeprojectname$"] + "Component";
+      if (componentClassName.Text == m_replacements["$safeprojectname$"])
+        componentClassName.Text = m_replacements["$safeprojectname$"] + "Component";
 
       EnableOrDisableContinue();
     }
@@ -163,11 +156,11 @@ namespace GHWizard
 
     private void rhino32browse_Click(object sender, EventArgs e)
     {
-      string startAt = File.Exists(rhino32path.Text) ? rhino32path.Text :
+      string start_at = File.Exists(rhino32path.Text) ? rhino32path.Text :
         Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
 
       string location;
-      if (GetLocation("Rhino 5 32-bit executable", "Rhino4.exe", startAt, out location))
+      if (GetLocation("Rhino 5 32-bit executable", "Rhino4.exe", start_at, out location))
       {
         rhino32path.Text = location;
         rhino32.Checked = true;
@@ -177,10 +170,10 @@ namespace GHWizard
 
     private void rhino64browse_Click(object sender, EventArgs e)
     {
-      string startAt = File.Exists(rhino64path.Text) ? rhino64path.Text : Get64BitPath();
+      string start_at = File.Exists(rhino64path.Text) ? rhino64path.Text : Get64BitPath();
 
       string location;
-      if (GetLocation("Rhino 5 64-bit executable", "Rhino.exe", startAt, out location))
+      if (GetLocation("Rhino 5 64-bit executable", "Rhino.exe", start_at, out location))
       {
         rhino64path.Text = location;
         rhino64.Checked = true;
@@ -193,10 +186,8 @@ namespace GHWizard
       string path = string.Empty;
       try
       {
-        if (Environment.Is64BitProcess)
-          path = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
-        else
-          path = Environment.GetEnvironmentVariable("ProgramW6432");
+        path = Environment.Is64BitProcess ? Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
+          : Environment.GetEnvironmentVariable("ProgramW6432");
       }
       catch { }
       return path;
@@ -204,11 +195,11 @@ namespace GHWizard
 
     private void browseRhinocommon_Click(object sender, EventArgs e)
     {
-      string startAt = File.Exists(rhinocommonPath.Text) ? rhinocommonPath.Text :
+      string start_at = File.Exists(rhinocommonPath.Text) ? rhinocommonPath.Text :
         Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
 
       string location;
-      if (GetLocation("RhinoCommon library", "RhinoCommon.dll", startAt, out location))
+      if (GetLocation("RhinoCommon library", "RhinoCommon.dll", start_at, out location))
       {
         rhinocommonPath.Text = location;
         rhinocommonPath.ForeColor = SystemColors.ControlDark;
@@ -218,11 +209,11 @@ namespace GHWizard
 
     private void browseGrasshopper_Click(object sender, EventArgs e)
     {
-      string startAt = File.Exists(grasshopperPath.Text) ? grasshopperPath.Text :
+      string start_at = File.Exists(grasshopperPath.Text) ? grasshopperPath.Text :
         Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
 
       string location;
-      if (GetLocation("Grasshopper library", "Grasshopper.dll", startAt, out location))
+      if (GetLocation("Grasshopper library", "Grasshopper.dll", start_at, out location))
       {
         grasshopperPath.Text = location;
         grasshopperPath.ForeColor = SystemColors.ControlDark;
@@ -253,32 +244,32 @@ namespace GHWizard
 
     private void FinalVariableSetup()
     {
-      _replacements["$infoclassname$"] = _replacements["$safeprojectname$"] + "Info";
-      _replacements["$infovisualname$"] = addondisplayname.Text;
+      m_replacements["$infoclassname$"] = m_replacements["$safeprojectname$"] + "Info";
+      m_replacements["$infovisualname$"] = addondisplayname.Text;
 
-      _replacements["$componentclassname$"] = componentClassName.Text;
+      m_replacements["$componentclassname$"] = componentClassName.Text;
 
-      _replacements["$componentvisualname$"] = componentVisualName.Text;
+      m_replacements["$componentvisualname$"] = componentVisualName.Text;
 
-      _replacements["$componentnickname$"] =
+      m_replacements["$componentnickname$"] =
         string.IsNullOrWhiteSpace(componentnickname.Text) ?
         Abbreviate(componentVisualName.Text, 3) : componentnickname.Text;
 
-      _replacements["$sampleIn$"] = commandsample.Checked ? "1" : "0";
+      m_replacements["$sampleIn$"] = commandsample.Checked ? "1" : "0";
 
-      _replacements["$componentcategory$"] = componentCategory.Text;
-      _replacements["$componentsubcategory$"] = componentSubcategory.Text;
-      _replacements["$componentdescription$"] = componentDescription.Text;
+      m_replacements["$componentcategory$"] = componentCategory.Text;
+      m_replacements["$componentsubcategory$"] = componentSubcategory.Text;
+      m_replacements["$componentdescription$"] = componentDescription.Text;
 
-      _replacements["$grasshopperURL$"] = grasshopperPath.Text;
-      _replacements["$ghioURL$"] = Path.Combine(Path.GetDirectoryName(grasshopperPath.Text), "GH_IO.dll");
-      _replacements["$rhinocommonURL$"] = rhinocommonPath.Text;
+      m_replacements["$grasshopperURL$"] = grasshopperPath.Text;
+      m_replacements["$ghioURL$"] = Path.Combine(Path.GetDirectoryName(grasshopperPath.Text), "GH_IO.dll");
+      m_replacements["$rhinocommonURL$"] = rhinocommonPath.Text;
 
-      _replacements["$rhino5_32_checked$"] = rhino32.Checked ? "1" : "0";
-      _replacements["$rhino5_32_URL$"] = rhino32path.Text;
+      m_replacements["$rhino5_32_checked$"] = rhino32.Checked ? "1" : "0";
+      m_replacements["$rhino5_32_URL$"] = rhino32path.Text;
 
-      _replacements["$rhino5_64_checked$"] = rhino64.Checked ? "1" : "0";
-      _replacements["$rhino5_64_URL$"] = rhino64path.Text;
+      m_replacements["$rhino5_64_checked$"] = rhino64.Checked ? "1" : "0";
+      m_replacements["$rhino5_64_URL$"] = rhino64path.Text;
     }
 
     private static string Abbreviate(string txt, int length)
