@@ -6,7 +6,7 @@
     <Icon>icon.ico</Icon>
     <TemplateID>A12884FE-889E-4F8B-B34C-1CBACA270EA4</TemplateID>
     <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyComponent.cs</DefaultName>
     <SortOrder>-1000</SortOrder>
