@@ -8,7 +8,7 @@
     <SortOrder>-1000</SortOrder>
     <DefaultName>MyComponent.vb</DefaultName>
     <ProjectType>VisualBasic</ProjectType>
-    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
