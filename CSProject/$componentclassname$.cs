@@ -114,10 +114,10 @@ $endif$    }$if$ ($sampleIn$ == 1)
 
       PolyCurve spiral = new PolyCurve();
 
-      for (int i = 0; i <= p0.Length - 2; i++)
+      for (int i = 0; i < p0.Length - 1; i++)
       {
-        Arc arc0 = new Arc(p0(i), plane.YAxis, p1(i + 1));
-        Arc arc1 = new Arc(p1(i + 1), -plane.YAxis, p0(i + 1));
+        Arc arc0 = new Arc(p0[i], plane.YAxis, p1[i + 1]);
+        Arc arc1 = new Arc(p1[i + 1], -plane.YAxis, p0[i + 1]);
 
         spiral.Append(arc0);
         spiral.Append(arc1);
