@@ -84,7 +84,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="VBProject.vstemplate" />
+    <VSTemplate Include="VBProject.vstemplate">
+      <OutputSubPath>Rhinoceros</OutputSubPath>
+	</VSTemplate>
   </ItemGroup>
   <ItemGroup>
     <None Include="icon.ico" />

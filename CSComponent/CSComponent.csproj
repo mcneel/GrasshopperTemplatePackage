@@ -56,7 +56,9 @@
     <None Include="MyComponent.cs" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="CSCommand.vstemplate" />
+    <VSTemplate Include="CSCommand.vstemplate">
+      <OutputSubPath>Rhinoceros</OutputSubPath>
+	</VSTemplate>
   </ItemGroup>
   <ItemGroup>
     <None Include="icon.ico" />
