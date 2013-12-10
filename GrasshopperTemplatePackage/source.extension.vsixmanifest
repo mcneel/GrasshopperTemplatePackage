@@ -3,7 +3,7 @@
   <Identifier Id="DAD17ACF-0A09-4FE0-B2F0-6E37A1C3CB03">
     <Name>Grasshopper Assembly</Name>
     <Author>Robert McNeel &amp; Associates</Author>
-    <Version>1.2.1.0</Version>
+    <Version>1.2.2.0</Version>
     <Description xml:space="preserve">Adds project and component wizards for Grasshopper assembly projects (.GHA). Rhinoceros 5 and Grasshopper are requirements for this wizard to operate correctly.
 
 For more information about RhinoCommon, see the Rhino wiki website at
