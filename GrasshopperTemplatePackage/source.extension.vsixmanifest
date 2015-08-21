@@ -7,18 +7,18 @@
     <Description xml:space="preserve">Adds project and component wizards for Grasshopper assembly projects (.GHA). Rhinoceros 5 and Grasshopper are requirements for this wizard to operate correctly.
 
 For more information about RhinoCommon, see the Rhino wiki website at
-http://wiki.mcneel.com/developer/rhinocommon
+http://www.rhino3d.com/go/rhinocommon_guide
 
 For more information about Grasshopper, see the Grasshopper forum website at
 http://www.grasshopper3d.com/
 
 For support about this wizard, contact the Rhino Developer Newsgroup, news://news.rhino3d.com/rhino or email giulio@mcneel.com.
 
-Copyright (c) 2012 Robert McNeel and Associates. All rights reserved.</Description>
+Copyright (c) 2012-2015 Robert McNeel and Associates. All rights reserved.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>http://www.grasshopper3d.com/forum/categories/vb-c-and-python-coding/listForCategory</MoreInfoUrl>
     <License>license.rtf</License>
-    <GettingStartedGuide>http://wiki.mcneel.com/developer/rhinocommon</GettingStartedGuide>
+    <GettingStartedGuide>http://www.rhino3d.com/go/rhinocommon_guide</GettingStartedGuide>
     <Icon>icon.ico</Icon>
     <PreviewImage>grasshopper.png</PreviewImage>
     <InstalledByMsi>false</InstalledByMsi>
@@ -43,8 +43,14 @@ Copyright (c) 2012 Robert McNeel and Associates. All rights reserved.</Descripti
         <Edition>Pro</Edition>
         <Edition>VSWinDesktopExpress</Edition>
       </VisualStudio>
+      <VisualStudio Version="14.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+        <Edition>VSWinDesktopExpress</Edition>
+      </VisualStudio>
     </SupportedProducts>
-    <SupportedFrameworkRuntimeEdition MinVersion="3.5" />
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" />
   </Identifier>
   <References />
   <Content>
