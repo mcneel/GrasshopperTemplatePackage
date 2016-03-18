@@ -7,38 +7,21 @@ namespace GHWizard
 {
   class GrasshopperFinder
   {
-    const string RH5_64_REG = @"SOFTWARE\McNeel\Rhinoceros\5.0x64\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
-    const string RH5_32_REG = @"SOFTWARE\McNeel\Rhinoceros\5.0\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
-    const string RH5_REG_NAME = @"FolderName";
+    const string RH_REG = @"SOFTWARE\McNeel\Rhinoceros\6.0\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
+    const string RH_FOLDER_NAME = @"FolderName";
     const string GH_DLL = "Grasshopper.dll";
 
     public static bool FindGrasshopper(out string path, out string grasshopperDllName)
     {
-      // always search current user first since it is most likely to contain the
-      // most recently modified key. RegQueryInfo is not available in .NET. This
-      // is the function that we should be using to figure out the proper string
-      // to use based on last modified time, but for now things should work for
-      // the most part.
 
       var strings = new List<string>();
 
-      //Rhino 5 64-bit old and new
-      if (Environment.Is64BitOperatingSystem)
-      {
-        SearchRegistryKey(RH5_64_REG, RH5_REG_NAME,
-          RegistryHive.CurrentUser, RegistryView.Registry64, strings);
+      //Rhino 6
+      SearchRegistryKey(RH_REG, RH_FOLDER_NAME,
+        RegistryHive.CurrentUser, RegistryView.Registry64, strings);
 
-        SearchRegistryKey(RH5_64_REG, RH5_REG_NAME,
-          RegistryHive.LocalMachine, RegistryView.Registry64, strings);
-      }
-
-      //Rhino 5 32-bit old installation type
-      SearchRegistryKey(RH5_32_REG, RH5_REG_NAME,
-          RegistryHive.CurrentUser, RegistryView.Registry32, strings);
-
-      //Rhino 5 32-bit
-      SearchRegistryKey(RH5_32_REG, RH5_REG_NAME,
-          RegistryHive.LocalMachine, RegistryView.Registry32, strings);
+      SearchRegistryKey(RH_REG, RH_FOLDER_NAME,
+        RegistryHive.LocalMachine, RegistryView.Registry64, strings);
 
       foreach (var str in strings)
       {

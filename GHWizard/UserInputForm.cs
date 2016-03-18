@@ -28,15 +28,9 @@ namespace GHWizard
         componentVisualName.Text = m_replacements["$safeprojectname$"];
 
         string path, exe_name;
-        
-        bool ok32 = RhinoFinder.FindRhino5_32bit(out path, out exe_name);
-        rhino32path.Text = Path.Combine(path, exe_name);
-        rhino32.Checked = ok32;
 
-        string path32 = path;
-        bool ok64 = RhinoFinder.FindRhino5_64bit(out path, out exe_name);
+        bool ok64 = RhinoFinder.FindRhino6(out path, out exe_name);
         rhino64path.Text = Path.Combine(path, exe_name);
-        rhino64.Checked = ok64;
 
         bool gh_ok = GrasshopperFinder.FindGrasshopper(out path, out exe_name);
         if (gh_ok)
@@ -49,8 +43,6 @@ namespace GHWizard
 
         if (File.Exists(Path.Combine(path, "rhinocommon.dll")))
           rhinocommonPath.Text = Path.Combine(path, "rhinocommon.dll");
-        else if (File.Exists(Path.Combine(path32, "rhinocommon.dll")))
-          rhinocommonPath.Text = Path.Combine(path32, "rhinocommon.dll");
         else
         {
           rhinocommonPath.Text = "Please select a path to RhinoCommon.dll to continue.";
@@ -58,23 +50,14 @@ namespace GHWizard
         }
 
         EnableOrDisableContinue();
-
-        if (!Environment.Is64BitOperatingSystem)
-        {
-          rhino64.Enabled = false;
-          rhino64browse.Visible = false;
-          rhino64path.Enabled = false;
-          rhino64path.Text = "This operating system is 32-bit.";
-        }
       }
 
       Font f = new Font(rhinocommonPath.Font.FontFamily,
         rhinocommonPath.Font.Size * 0.78f, rhinocommonPath.Font.Style, rhinocommonPath.Font.Unit, rhinocommonPath.Font.GdiCharSet);
       grasshopperPath.Font = f;
       rhinocommonPath.Font = f;
-      rhino32path.Font = f;
       rhino64path.Font = f;
-      eitheronetext.Font = f;
+      errortext.Font = f;
     }
 
     protected UserInputForm() : this(null)
@@ -91,17 +74,13 @@ namespace GHWizard
 
     private void EnableOrDisableContinue()
     {
-      bool either_checked = rhino32.Checked || rhino64.Checked;
-
-      eitheronetext.Visible = !either_checked;
-
       finish.Enabled =
         IsTextBoxAllRight(addondisplayname) && IsTextBoxAllRight(componentClassName) &&
-        either_checked &&
-        (rhino32.Checked ? File.Exists(rhino32path.Text) : true) &&
-        (rhino64.Checked ? File.Exists(rhino64path.Text) : true) &&
+        File.Exists(rhino64path.Text)&&
         File.Exists(rhinocommonPath.Text) &&
         File.Exists(grasshopperPath.Text);
+
+      errortext.Visible = finish.Enabled;
     }
 
     private bool IsTextBoxAllRight(TextBox tb)
@@ -131,16 +110,6 @@ namespace GHWizard
       EnableOrDisableContinue();
     }
 
-    private void rhino32_CheckedChanged(object sender, EventArgs e)
-    {
-      EnableDisablePath(rhino32, rhino32path, rhino32browse);
-    }
-
-    private void rhino64_CheckedChanged(object sender, EventArgs e)
-    {
-      EnableDisablePath(rhino64, rhino64path, rhino64browse);
-    }
-
     private void EnableDisablePath(CheckBox rhino, Label path, Button browse)
     {
       if (rhino.Checked && !File.Exists(path.Text))
@@ -154,29 +123,14 @@ namespace GHWizard
       EnableOrDisableContinue();
     }
 
-    private void rhino32browse_Click(object sender, EventArgs e)
-    {
-      string start_at = File.Exists(rhino32path.Text) ? rhino32path.Text :
-        Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
-
-      string location;
-      if (GetLocation("Rhino 5 32-bit executable", "Rhino4.exe", start_at, out location))
-      {
-        rhino32path.Text = location;
-        rhino32.Checked = true;
-        EnableOrDisableContinue();
-      }
-    }
-
     private void rhino64browse_Click(object sender, EventArgs e)
     {
       string start_at = File.Exists(rhino64path.Text) ? rhino64path.Text : Get64BitPath();
 
       string location;
-      if (GetLocation("Rhino 5 64-bit executable", "Rhino.exe", start_at, out location))
+      if (GetLocation("Rhino 6 executable", "Rhino.exe", start_at, out location))
       {
         rhino64path.Text = location;
-        rhino64.Checked = true;
         EnableOrDisableContinue();
       }
     }
@@ -265,11 +219,7 @@ namespace GHWizard
       m_replacements["$ghioURL$"] = Path.Combine(Path.GetDirectoryName(grasshopperPath.Text), "GH_IO.dll");
       m_replacements["$rhinocommonURL$"] = rhinocommonPath.Text;
 
-      m_replacements["$rhino5_32_checked$"] = rhino32.Checked ? "1" : "0";
-      m_replacements["$rhino5_32_URL$"] = rhino32path.Text;
-
-      m_replacements["$rhino5_64_checked$"] = rhino64.Checked ? "1" : "0";
-      m_replacements["$rhino5_64_URL$"] = rhino64path.Text;
+      m_replacements["$rhino6_URL$"] = rhino64path.Text;
     }
 
     private static string Abbreviate(string txt, int length)

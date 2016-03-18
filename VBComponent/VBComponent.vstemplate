@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
   <TemplateData>
-    <Name>Empty Grasshopper Component</Name>
+    <Name>Empty Grasshopper Component for v6</Name>
     <Description>A new Grasshopper Component implemented in Vb.Net</Description>
     <Icon>icon.ico</Icon>
-    <TemplateID>4A6120A6-4305-4127-B259-C82BBBE9B397</TemplateID>
+    <TemplateID>90E2B06C-6BF9-4713-A8BC-9670145F912B</TemplateID>
     <SortOrder>-1000</SortOrder>
     <DefaultName>MyComponent.vb</DefaultName>
     <ProjectType>VisualBasic</ProjectType>
-    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>

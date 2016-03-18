@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    $if$ ($rhino5_32_checked$ == 1)<Configuration Condition=" '$(Configuration)' == '' ">Debug32</Configuration>
-    $else$<Configuration Condition=" '$(Configuration)' == '' ">Debug64</Configuration>
-    $endif$<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>
@@ -16,7 +15,7 @@
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v$targetframeworkversion$</TargetFrameworkVersion>
  </PropertyGroup>
-$if$ ($rhino5_32_checked$ == 1)  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug32|AnyCPU' ">
+ <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -25,16 +24,6 @@ $if$ ($rhino5_32_checked$ == 1)  <PropertyGroup Condition=" '$(Configuration)|$(
     <DocumentationFile>$safeprojectname$.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
-$endif$ $if$ ($rhino5_64_checked$ == 1)  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug64|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\</OutputPath>
-    <DocumentationFile>$safeprojectname$.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-  </PropertyGroup>
-$endif$
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
@@ -128,18 +117,13 @@ $endif$
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)$(ProjectName).gha"
 Erase "$(TargetPath)"</PostBuildEvent>
-  </PropertyGroup>$if$ ($rhino5_32_checked$ == 1)
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug32|AnyCPU' ">
-    <StartArguments></StartArguments>
-    <StartAction>Program</StartAction>
-    <StartProgram>$rhino5_32_URL$</StartProgram>
-  </PropertyGroup>$endif$
+  </PropertyGroup>
   <PropertyGroup>
     <FallbackCulture>en-US</FallbackCulture>
-  </PropertyGroup>$if$ ($rhino5_64_checked$ == 1)
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|AnyCPU'">
-    <StartProgram>$rhino5_64_URL$</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartProgram>$rhino6_URL$</StartProgram>
     <StartArguments></StartArguments>
     <StartAction>Program</StartAction>
-  </PropertyGroup>$endif$
+  </PropertyGroup>
 </Project>

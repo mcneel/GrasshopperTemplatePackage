@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
-  <Identifier Id="DAD17ACF-0A09-4FE0-B2F0-6E37A1C3CB03">
-    <Name>Grasshopper Assembly</Name>
+  <Identifier Id="062B6C6A-7051-4274-888F-5B0FA3128282">
+    <Name>Grasshopper Assembly v6</Name>
     <Author>Robert McNeel &amp; Associates</Author>
-    <Version>1.2.2.0</Version>
-    <Description xml:space="preserve">Adds project and component wizards for Grasshopper assembly projects (.GHA). Rhinoceros 5 and Grasshopper are requirements for this wizard to operate correctly.
+    <Version>6.0.0.1</Version>
+    <Description xml:space="preserve">Adds project and component wizards for Grasshopper assembly projects (.GHA). Rhinoceros 6 is a requirement for this wizard to operate correctly.
 
-For more information about RhinoCommon, see the Rhino wiki website at
+For more information about RhinoCommon, see the Rhino developer website at
 http://www.rhino3d.com/go/rhinocommon_guide
 
 For more information about Grasshopper, see the Grasshopper forum website at
 http://www.grasshopper3d.com/
 
-For support about this wizard, contact the Rhino Developer Newsgroup, news://news.rhino3d.com/rhino or email giulio@mcneel.com.
+For support about this wizard, contact the Rhino Developer forum, http://discourse.mcneel.com/ or email giulio@mcneel.com.
 
-Copyright (c) 2012-2015 Robert McNeel and Associates. All rights reserved.</Description>
+Copyright (c) 2012-2016 Robert McNeel and Associates. All rights reserved.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>http://www.grasshopper3d.com/forum/categories/vb-c-and-python-coding/listForCategory</MoreInfoUrl>
     <License>license.rtf</License>
@@ -23,27 +23,6 @@ Copyright (c) 2012-2015 Robert McNeel and Associates. All rights reserved.</Desc
     <PreviewImage>grasshopper.png</PreviewImage>
     <InstalledByMsi>false</InstalledByMsi>
     <SupportedProducts>
-      <VisualStudio Version="10.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-        <Edition>VBExpress</Edition>
-        <Edition>VCSExpress</Edition>
-      </VisualStudio>
-      <VisualStudio Version="11.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-        <Edition>VBExpress</Edition>
-        <Edition>VCSExpress</Edition>
-		 <Edition>VSWinDesktopExpress</Edition>
-      </VisualStudio>
-      <VisualStudio Version="12.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-        <Edition>VSWinDesktopExpress</Edition>
-      </VisualStudio>
       <VisualStudio Version="14.0">
         <Edition>Ultimate</Edition>
         <Edition>Premium</Edition>

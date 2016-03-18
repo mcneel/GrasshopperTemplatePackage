@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
   <TemplateData>
-    <Name>Grasshopper Add-On</Name>
+    <Name>Grasshopper Add-On for v6</Name>
     <Description>A new Grasshopper add-on project that can be easily debugged and can automatically launch Rhino.</Description>
     <Icon>icon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
     <SortOrder>1000</SortOrder>
-    <TemplateID>2075E742-2CD6-4AD2-A853-6E8E2442A421</TemplateID>
+    <TemplateID>9412BBDB-92B2-4C4D-A35B-5802901C475B</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>MyProject</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
