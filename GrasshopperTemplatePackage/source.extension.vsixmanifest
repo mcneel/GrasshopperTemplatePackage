@@ -30,11 +30,11 @@ Copyright (c) 2012-2016 Robert McNeel and Associates. All rights reserved.</Desc
         <Edition>VSWinDesktopExpress</Edition>
       </VisualStudio>
     </SupportedProducts>
-    <SupportedFrameworkRuntimeEdition MinVersion="4.0" />
+    <SupportedFrameworkRuntimeEdition MinVersion="4.5" />
   </Identifier>
   <References />
   <Content>
-    <Assembly AssemblyName="|GHWizard;AssemblyName|">|GHWizard|</Assembly>
+    <Assembly AssemblyName="|GHWizardNew;AssemblyName|">|GHWizardNew|</Assembly>
     <ProjectTemplate>ProjectTemplates</ProjectTemplate>
     <ItemTemplate>ItemTemplates</ItemTemplate>
   </Content>

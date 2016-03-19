@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrasshopperTemplatePackage"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSProject", "CSProject\CSProject.csproj", "{3B988238-6FA2-4F74-98AF-691FB9549C65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHWizard", "GHWizard\GHWizard.csproj", "{EED8E973-3E36-4C9D-94B6-402EC5DE82A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHWizardNew", "GHWizard\GHWizardNew.csproj", "{EED8E973-3E36-4C9D-94B6-402EC5DE82A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSComponent", "CSComponent\CSComponent.csproj", "{1508312D-9AC5-42DB-BCAB-1DF801FE9A72}"
 EndProject

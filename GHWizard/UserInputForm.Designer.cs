@@ -49,16 +49,15 @@
       this.commandsample = new System.Windows.Forms.CheckBox();
       this.usefullabel = new System.Windows.Forms.Label();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
+      this.label8 = new System.Windows.Forms.Label();
       this.grasshopperLabel = new System.Windows.Forms.Label();
       this.grasshopperBrowse = new System.Windows.Forms.Button();
       this.grasshopperPath = new System.Windows.Forms.Label();
-      this.errortext = new System.Windows.Forms.Label();
       this.rhinocommonLabel = new System.Windows.Forms.Label();
       this.rhinocommonBrowse = new System.Windows.Forms.Button();
       this.rhinocommonPath = new System.Windows.Forms.Label();
       this.rhino64browse = new System.Windows.Forms.Button();
-      this.rhino64path = new System.Windows.Forms.Label();
-      this.label8 = new System.Windows.Forms.Label();
+      this.rhinoExepath = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.SuspendLayout();
@@ -258,18 +257,26 @@
       this.groupBox2.Controls.Add(this.grasshopperLabel);
       this.groupBox2.Controls.Add(this.grasshopperBrowse);
       this.groupBox2.Controls.Add(this.grasshopperPath);
-      this.groupBox2.Controls.Add(this.errortext);
       this.groupBox2.Controls.Add(this.rhinocommonLabel);
       this.groupBox2.Controls.Add(this.rhinocommonBrowse);
       this.groupBox2.Controls.Add(this.rhinocommonPath);
       this.groupBox2.Controls.Add(this.rhino64browse);
-      this.groupBox2.Controls.Add(this.rhino64path);
+      this.groupBox2.Controls.Add(this.rhinoExepath);
       this.groupBox2.Location = new System.Drawing.Point(12, 238);
       this.groupBox2.Name = "groupBox2";
       this.groupBox2.Size = new System.Drawing.Size(357, 142);
       this.groupBox2.TabIndex = 7;
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "Reference and debug paths";
+      // 
+      // label8
+      // 
+      this.label8.AutoSize = true;
+      this.label8.Location = new System.Drawing.Point(14, 96);
+      this.label8.Name = "label8";
+      this.label8.Size = new System.Drawing.Size(55, 13);
+      this.label8.TabIndex = 19;
+      this.label8.Text = "Rhino.exe";
       // 
       // grasshopperLabel
       // 
@@ -299,17 +306,6 @@
       this.grasshopperPath.Size = new System.Drawing.Size(118, 13);
       this.grasshopperPath.TabIndex = 18;
       this.grasshopperPath.Text = "path\\to\\grasshopper.dll";
-      // 
-      // errortext
-      // 
-      this.errortext.AutoSize = true;
-      this.errortext.ForeColor = System.Drawing.Color.Red;
-      this.errortext.Location = new System.Drawing.Point(172, 54);
-      this.errortext.Name = "errortext";
-      this.errortext.Size = new System.Drawing.Size(110, 39);
-      this.errortext.TabIndex = 15;
-      this.errortext.Text = "Please select a 64-bit\r\nversion of Rhinoceros\r\nto use in debugging.";
-      this.errortext.Visible = false;
       // 
       // rhinocommonLabel
       // 
@@ -350,24 +346,15 @@
       this.rhino64browse.UseVisualStyleBackColor = true;
       this.rhino64browse.Click += new System.EventHandler(this.rhino64browse_Click);
       // 
-      // rhino64path
+      // rhinoExepath
       // 
-      this.rhino64path.AutoSize = true;
-      this.rhino64path.ForeColor = System.Drawing.SystemColors.ControlDark;
-      this.rhino64path.Location = new System.Drawing.Point(5, 110);
-      this.rhino64path.Name = "rhino64path";
-      this.rhino64path.Size = new System.Drawing.Size(90, 13);
-      this.rhino64path.TabIndex = 12;
-      this.rhino64path.Text = "path\\to\\rhino.exe";
-      // 
-      // label8
-      // 
-      this.label8.AutoSize = true;
-      this.label8.Location = new System.Drawing.Point(14, 96);
-      this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(55, 13);
-      this.label8.TabIndex = 19;
-      this.label8.Text = "Rhino.exe";
+      this.rhinoExepath.AutoSize = true;
+      this.rhinoExepath.ForeColor = System.Drawing.SystemColors.ControlDark;
+      this.rhinoExepath.Location = new System.Drawing.Point(5, 110);
+      this.rhinoExepath.Name = "rhinoExepath";
+      this.rhinoExepath.Size = new System.Drawing.Size(90, 13);
+      this.rhinoExepath.TabIndex = 12;
+      this.rhinoExepath.Text = "path\\to\\rhino.exe";
       // 
       // UserInputForm
       // 
@@ -411,13 +398,12 @@
         private System.Windows.Forms.TextBox componentClassName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label rhino64path;
+        private System.Windows.Forms.Label rhinoExepath;
         private System.Windows.Forms.Button rhino64browse;
         private System.Windows.Forms.Label rhinocommonLabel;
         private System.Windows.Forms.Button rhinocommonBrowse;
         private System.Windows.Forms.Label rhinocommonPath;
         private System.Windows.Forms.Label usefullabel;
-        private System.Windows.Forms.Label errortext;
         private System.Windows.Forms.CheckBox commandsample;
         private System.Windows.Forms.TextBox componentSubcategory;
         private System.Windows.Forms.TextBox componentCategory;

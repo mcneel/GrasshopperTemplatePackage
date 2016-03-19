@@ -29,24 +29,33 @@ namespace GHWizard
 
         string path, exe_name;
 
-        bool ok64 = RhinoFinder.FindRhino6(out path, out exe_name);
-        rhino64path.Text = Path.Combine(path, exe_name);
+        bool rh_ok = RhinoFinder.FindRhino6(out path, out exe_name);
+        rhinoExepath.Text = Path.Combine(path, exe_name);
 
-        bool gh_ok = GrasshopperFinder.FindGrasshopper(out path, out exe_name);
+        string gh_path, gh_dll_name;
+        bool gh_ok = GrasshopperFinder.FindGrasshopper(out gh_path, out gh_dll_name);
         if (gh_ok)
-          grasshopperPath.Text = Path.Combine(path, exe_name);
+          grasshopperPath.Text = Path.Combine(gh_path, gh_dll_name);
         else
         {
-          rhinocommonPath.Text = "Please select a path to Grasshopper.dll to continue.";
-          rhinocommonPath.ForeColor = Color.Red;
+          grasshopperPath.Text = string.Format("Please select a path to {0} to continue.", gh_dll_name);
+          grasshopperPath.ForeColor = Color.Red;
         }
 
         if (File.Exists(Path.Combine(path, "rhinocommon.dll")))
+        {
           rhinocommonPath.Text = Path.Combine(path, "rhinocommon.dll");
+        }
         else
         {
           rhinocommonPath.Text = "Please select a path to RhinoCommon.dll to continue.";
           rhinocommonPath.ForeColor = Color.Red;
+        }
+
+        if (!rh_ok)
+        {
+          rhinoExepath.Text = "Please select a path to RhinoCommon.dll to continue.";
+          rhinoExepath.ForeColor = Color.Red;
         }
 
         EnableOrDisableContinue();
@@ -56,8 +65,7 @@ namespace GHWizard
         rhinocommonPath.Font.Size * 0.78f, rhinocommonPath.Font.Style, rhinocommonPath.Font.Unit, rhinocommonPath.Font.GdiCharSet);
       grasshopperPath.Font = f;
       rhinocommonPath.Font = f;
-      rhino64path.Font = f;
-      errortext.Font = f;
+      rhinoExepath.Font = f;
     }
 
     protected UserInputForm() : this(null)
@@ -76,11 +84,9 @@ namespace GHWizard
     {
       finish.Enabled =
         IsTextBoxAllRight(addondisplayname) && IsTextBoxAllRight(componentClassName) &&
-        File.Exists(rhino64path.Text)&&
+        File.Exists(rhinoExepath.Text)&&
         File.Exists(rhinocommonPath.Text) &&
         File.Exists(grasshopperPath.Text);
-
-      errortext.Visible = finish.Enabled;
     }
 
     private bool IsTextBoxAllRight(TextBox tb)
@@ -125,12 +131,13 @@ namespace GHWizard
 
     private void rhino64browse_Click(object sender, EventArgs e)
     {
-      string start_at = File.Exists(rhino64path.Text) ? rhino64path.Text : Get64BitPath();
+      string start_at = File.Exists(rhinoExepath.Text) ? rhinoExepath.Text : Get64BitPath();
 
       string location;
       if (GetLocation("Rhino 6 executable", "Rhino.exe", start_at, out location))
       {
-        rhino64path.Text = location;
+        rhinoExepath.Text = location;
+        rhinoExepath.ForeColor = SystemColors.ControlDark;
         EnableOrDisableContinue();
       }
     }
@@ -219,7 +226,7 @@ namespace GHWizard
       m_replacements["$ghioURL$"] = Path.Combine(Path.GetDirectoryName(grasshopperPath.Text), "GH_IO.dll");
       m_replacements["$rhinocommonURL$"] = rhinocommonPath.Text;
 
-      m_replacements["$rhino6_URL$"] = rhino64path.Text;
+      m_replacements["$rhino6_URL$"] = rhinoExepath.Text;
     }
 
     private static string Abbreviate(string txt, int length)

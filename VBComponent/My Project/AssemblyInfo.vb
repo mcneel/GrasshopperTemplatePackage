@@ -10,14 +10,14 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("VBCommandItem")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("Robert McNeel & Associates")> 
-<Assembly: AssemblyProduct("VBCommandItem")> 
-<Assembly: AssemblyCopyright("Copyright © Robert McNeel & Associates 2013")> 
+<Assembly: AssemblyProduct("VBCommandItem")>
+<Assembly: AssemblyCopyright("Copyright © Robert McNeel & Associates 2016")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("378becc6-08fd-419f-a436-a88cd12445f0")> 
+<Assembly: Guid("378becc6-08fd-419f-a436-a88cd12445f0")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -30,5 +30,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.1.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("6.0.0.0")>
+<Assembly: AssemblyFileVersion("6.0.0.0")>

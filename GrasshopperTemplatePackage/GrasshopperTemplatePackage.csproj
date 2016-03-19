@@ -180,9 +180,9 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
     </ProjectReference>
-    <ProjectReference Include="..\GHWizard\GHWizard.csproj">
+    <ProjectReference Include="..\GHWizard\GHWizardNew.csproj">
       <Project>{EED8E973-3E36-4C9D-94B6-402EC5DE82A7}</Project>
-      <Name>GHWizard</Name>
+      <Name>GHWizardNew</Name>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3b</IncludeOutputGroupsInVSIX>
       <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>

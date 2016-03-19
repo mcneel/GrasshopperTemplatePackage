@@ -13,7 +13,7 @@ namespace GHWizard
 
     public static bool FindGrasshopper(out string path, out string grasshopperDllName)
     {
-
+      grasshopperDllName = GH_DLL;
       var strings = new List<string>();
 
       //Rhino 6
@@ -28,13 +28,11 @@ namespace GHWizard
         if (File.Exists(Path.Combine(str, GH_DLL)))
         {
           path = str;
-          grasshopperDllName = GH_DLL;
           return true;
         }
       }
 
       path = null;
-      grasshopperDllName = null;
       return false;
     }
 
