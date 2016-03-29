@@ -8,13 +8,12 @@ namespace GHWizard
   class GrasshopperFinder
   {
     const string RH_REG = @"SOFTWARE\McNeel\Rhinoceros\6.0\Plug-ins\b45a29b1-4343-4035-989e-044e8580d9cf\PlugIn";
-    const string RH_FOLDER_NAME = @"FolderName";
-    const string GH_DLL = "Grasshopper.dll";
+    const string RH_FOLDER_NAME = @"FileName";
 
     public static bool FindGrasshopper(out string path, out string grasshopperDllName)
     {
-      grasshopperDllName = GH_DLL;
       var strings = new List<string>();
+      grasshopperDllName = "Grasshopper.dll";
 
       //Rhino 6
       SearchRegistryKey(RH_REG, RH_FOLDER_NAME,
@@ -25,9 +24,9 @@ namespace GHWizard
 
       foreach (var str in strings)
       {
-        if (File.Exists(Path.Combine(str, GH_DLL)))
+        if (File.Exists(str))
         {
-          path = str;
+          path = Path.GetDirectoryName(str);
           return true;
         }
       }
