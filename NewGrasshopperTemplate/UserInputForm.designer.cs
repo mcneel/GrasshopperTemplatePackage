@@ -1,4 +1,4 @@
-﻿namespace GHWizard
+﻿namespace NewGrasshopperTemplate
 {
     partial class UserInputForm
     {

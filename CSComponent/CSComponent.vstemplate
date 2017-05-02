@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
     <Name>Empty Grasshopper Component for v6</Name>
     <Description>A new Grasshopper Component implemented in C#</Description>
@@ -9,16 +9,13 @@
     <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MyComponent.cs</DefaultName>
-    <SortOrder>-1000</SortOrder>
-    <TemplateGroupID>Grasshopper</TemplateGroupID>
   </TemplateData>
   <TemplateContent>
-		<References>
-			<Reference>
-				<Assembly>System</Assembly>
-			</Reference>
-		</References>
-
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
     <ProjectItem ReplaceParameters="true">MyComponent.cs</ProjectItem>
   </TemplateContent>
 </VSTemplate>

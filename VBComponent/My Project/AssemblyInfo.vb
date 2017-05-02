@@ -1,4 +1,5 @@
-﻿Imports System.Reflection
+﻿Imports System
+Imports System.Reflection
 Imports System.Runtime.InteropServices
 
 ' General Information about an assembly is controlled through the following 
@@ -7,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("VBCommandItem")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Robert McNeel & Associates")> 
-<Assembly: AssemblyProduct("VBCommandItem")>
-<Assembly: AssemblyCopyright("Copyright © Robert McNeel & Associates 2016")>
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyTitle("VBComponent")>
+<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyCompany("Company")>
+<Assembly: AssemblyProduct("VBComponent")>
+<Assembly: AssemblyCopyright("Copyright © Company 2017")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("378becc6-08fd-419f-a436-a88cd12445f0")>
+<Assembly: Guid("1d41c527-7844-4df1-a83e-d2d80b23aa16")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -30,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("6.0.0.0")>
-<Assembly: AssemblyFileVersion("6.0.0.0")>
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

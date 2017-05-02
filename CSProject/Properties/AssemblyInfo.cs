@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RhinoCommonProjectTemplate")]
+[assembly: AssemblyTitle("CSProject")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Rober McNeel & Associates")]
-[assembly: AssemblyProduct("RhinoCommonProjectTemplate")]
-[assembly: AssemblyCopyright("Copyright © Robert McNeel & Associates 2013")]
+[assembly: AssemblyCompany("Company")]
+[assembly: AssemblyProduct("CSProject")]
+[assembly: AssemblyCopyright("Copyright © Company 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("73fb26f9-968f-4e66-ba95-55e11808049f")]
+[assembly: Guid("ade5e051-c97b-4e3a-a3b6-54218ea17763")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -31,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("6.0.0.0")]
-[assembly: AssemblyFileVersion("6.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

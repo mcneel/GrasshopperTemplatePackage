@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using Microsoft.VisualStudio.TemplateWizard;
 using EnvDTE;
 
-namespace GHWizard
+namespace NewGrasshopperTemplate
 {
   /// <summary>
   /// See: http://msdn.microsoft.com/en-us/library/ms185301.aspx

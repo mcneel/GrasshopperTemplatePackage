@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Win32;
 using System.IO;
 
-namespace GHWizard
+namespace NewGrasshopperTemplate
 {
   static class RhinoFinder
   {

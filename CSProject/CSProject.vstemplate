@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
     <Name>Grasshopper Add-On for v6</Name>
     <Description>A new Grasshopper add-on project that can be easily debugged and can automatically launch Rhino.</Description>
@@ -11,17 +11,17 @@
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>MyProject</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
-    <TemplateGroupID>Grasshopper</TemplateGroupID>
   </TemplateData>
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" OpenInEditor="true" OpenOrder="1">$componentclassname$.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" OpenInEditor="true" OpenOrder="2">$infoclassname$.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">$componentclassname$.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">$infoclassname$.cs</ProjectItem>
     </Project>
   </TemplateContent>
+
   <WizardExtension>
-    <Assembly>GHWizardNew, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9cbe2d392744cfe6</Assembly>
-    <FullClassName>GHWizard.CollectInformationWizard</FullClassName>
+    <Assembly>NewGrasshopperTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=9cbe2d392744cfe6</Assembly>
+    <FullClassName>NewGrasshopperTemplate.CollectInformationWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>
