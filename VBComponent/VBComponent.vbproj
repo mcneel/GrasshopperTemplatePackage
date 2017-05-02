@@ -71,7 +71,9 @@
     <None Include="MyComponent.vb" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="VBComponent.vstemplate" />
+    <VSTemplate Include="VBComponent.vstemplate">
+		<OutputSubPath>Rhinoceros</OutputSubPath>
+	</VSTemplate>
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />

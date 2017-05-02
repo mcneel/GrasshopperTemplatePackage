@@ -60,7 +60,9 @@
     <None Include="MyComponent.cs" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="CSComponent.vstemplate" />
+    <VSTemplate Include="CSComponent.vstemplate">
+		<OutputSubPath>Rhinoceros</OutputSubPath>
+	</VSTemplate>
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />

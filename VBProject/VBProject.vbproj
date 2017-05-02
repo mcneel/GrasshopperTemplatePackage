@@ -80,7 +80,9 @@
     <None Include="Settings.settings" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="VBProject.vstemplate" />
+    <VSTemplate Include="VBProject.vstemplate">
+		<OutputSubPath>Rhinoceros</OutputSubPath>
+	</VSTemplate>
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
