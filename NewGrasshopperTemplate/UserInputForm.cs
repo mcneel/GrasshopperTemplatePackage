@@ -30,7 +30,9 @@ namespace NewGrasshopperTemplate
         string path, exe_name;
 
         bool rh_ok = RhinoFinder.FindRhino6(out path, out exe_name);
-        rhinoExepath.Text = Path.Combine(path, exe_name);
+
+        if (rh_ok && (!string.IsNullOrWhiteSpace(path)))
+          rhinoExepath.Text = Path.Combine(path, exe_name);
 
         string gh_path, gh_dll_name;
         bool gh_ok = GrasshopperFinder.FindGrasshopper(out gh_path, out gh_dll_name);
@@ -42,7 +44,7 @@ namespace NewGrasshopperTemplate
           grasshopperPath.ForeColor = Color.Red;
         }
 
-        if (File.Exists(Path.Combine(path, "rhinocommon.dll")))
+        if (rh_ok && (!string.IsNullOrWhiteSpace(path)) && File.Exists(Path.Combine(path, "rhinocommon.dll")))
         {
           rhinocommonPath.Text = Path.Combine(path, "rhinocommon.dll");
         }

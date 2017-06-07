@@ -24,6 +24,8 @@ namespace NewGrasshopperTemplate
 
         foreach (var str in strings)
         {
+          if (string.IsNullOrWhiteSpace(str)) continue;
+
           path = Path.Combine(str, "System");
           if (File.Exists(Path.Combine(path, RhinoExe)))
           {
