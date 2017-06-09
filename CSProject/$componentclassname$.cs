@@ -163,7 +163,7 @@ $endif$    }$if$ ($sampleIn$ == 1)
     /// </summary>
     public override Guid ComponentGuid
     {
-      get { return new Guid("{$guid2$}"); }
+      get { return new Guid("$guid2$"); }
     }
   }
 }

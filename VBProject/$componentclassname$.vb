@@ -150,7 +150,7 @@ $endif$
   ''' </summary>
   Public Overrides ReadOnly Property ComponentGuid() As Guid
     Get
-      Return New Guid("{$guid2$}")
-    End Get
+            Return New Guid("$guid2$")
+        End Get
   End Property
 End Class

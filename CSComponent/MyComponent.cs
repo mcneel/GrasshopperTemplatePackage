@@ -58,7 +58,7 @@ protected override System.Drawing.Bitmap Icon
 /// </summary>
 public override Guid ComponentGuid
 {
-  get { return new Guid("{$guid1$}"); }
+  get { return new Guid("$guid1$"); }
 }
   }
 }
