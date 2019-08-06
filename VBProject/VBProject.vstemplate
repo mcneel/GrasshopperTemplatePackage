@@ -1,6 +1,6 @@
 ﻿<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>Grasshopper Add-On for v6</Name>
+    <Name>Grasshopper Add-On for v6 (VB)</Name>
     <Description>A new Grasshopper add-on project that can be easily debugged and can automatically launch Rhino.</Description>
     <Icon>icon.ico</Icon>
     <ProjectType>VisualBasic</ProjectType>
@@ -11,6 +11,10 @@
     <DefaultName>MyProject</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+
+    <LanguageTag>visualbasic</LanguageTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>desktop</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>
     <Project File="ProjectTemplate.vbproj" ReplaceParameters="true">

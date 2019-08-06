@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>Empty Grasshopper Component for v6</Name>
+    <Name>Empty Grasshopper Component for v6 (VB)</Name>
     <Description>A new Grasshopper Component implemented in Vb.Net</Description>
     <Icon>icon.ico</Icon>
     <TemplateID>90E2B06C-6BF9-4713-A8BC-9670145F912B</TemplateID>
@@ -10,6 +10,10 @@
     <ProjectType>VisualBasic</ProjectType>
     <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+
+    <LanguageTag>visualbasic</LanguageTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>desktop</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>
     <References>

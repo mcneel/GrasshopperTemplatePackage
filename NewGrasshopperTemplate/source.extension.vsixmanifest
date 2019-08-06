@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="062B6C6A-7051-4274-888F-5B0FA3128282" Version="6.5.2.0" Language="en-US" Publisher="Robert McNeel &amp; Associates" />
+        <Identity Id="062B6C6A-7051-4274-888F-5B0FA3128282" Version="6.5.2.2" Language="en-US" Publisher="Robert McNeel &amp; Associates" />
         <DisplayName>Grasshopper templates for v6</DisplayName>
         <Description xml:space="preserve">Adds plug-in, command and zoo wizards for RhinoCommon projects. This includes digitizer, render, import and export plug-ins. Makes setting up debugging easier and automatically references RhinoCommon.dll. Rhinoceros 6 is a requirement for this wizard to operate correctly.
 

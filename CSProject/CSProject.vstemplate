@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>Grasshopper Add-On for v6</Name>
+    <Name>Grasshopper Add-On for v6 (C#)</Name>
     <Description>A new Grasshopper add-on project that can be easily debugged and can automatically launch Rhino.</Description>
     <Icon>icon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
@@ -11,6 +11,10 @@
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>MyProject</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
+    
+    <LanguageTag>csharp</LanguageTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>desktop</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
